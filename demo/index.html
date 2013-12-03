@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Stub Demo - X-Tag</title>
+    <link rel="stylesheet" type="text/css" href="libs/x-tag-components.css"/>
+    <link rel="stylesheet" type="text/css" href="blocks/blocks.css"/>
+    <script type="text/javascript" src="libs/x-tag-components.js"></script>
+    <script type="text/javascript" src="blocks/blocks.js"></script>
+</head>
+<body>
+
+
+<h2>NB Demo</h2>
+
+
+<nb-input-group id="register">
+    <nb-input placeholder="Введите свой email"></nb-input>
+    <button is="nb-button">Подписаться</nb-button>
+</nb-input-group>
+
+
+<!------------------------->
+<template id="tpl-input">
+    <label class="field">
+        <span class="field-reset"></span>
+        <span class="field-content">
+            <input class="input-controller" placeholder="{{placeholder}}" type="text" value="{{content}}">
+            <span class="input-view">&nbsp;</span>
+        </span>
+    </label>
+</template>
+<template id="tpl-button_icon">
+    <span class="button-content">{{content}}</span>
+</template>
+<!------------------------->
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <title>Веб-компоненты</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1274, user-scalable=no">
+    <link rel="stylesheet" href="styles/screen.css">
+    <link rel="stylesheet" href="styles/promo.css">
+    <link rel="stylesheet" href="styles/print.css" media="print">
+
+    <link rel="stylesheet" href="styles/idea.min.css">
+</head>
+<body class="list">
+<header class="caption">
+    <h1>Web Components</h1>
+
+    <p><a href="http://twitter.com/basvasilich">Пацев Вадим</a></p>
+</header>
+<section class="slide null">
+    <img src="images/yandex.svg" class="yandex"/>
+</section>
+
+
+<section class="slide first">
+    <div class="arrow">
+        <img src="images/yandex.svg" class="yandex"/>
+
+        <h2>Web Components</h2>
+
+        <div class="info">
+            <p class="author">Вадим Пацев</p>
+
+            <p class="author">7 декабря 2013, WSD</p>
+        </div>
+    </div>
+</section>
+<section class="slide cover w c">
+    <img src="pictures/bem-2/web-components.png"/>
+</section>
+<section class="slide">
+    <h2>Web Components</h2>
+    <ul>
+        <li>Custom Elements</li>
+        <li class="next">Templates</li>
+        <li class="next">Imports</li>
+        <li class="next">Shadow DOM</li>
+        <li class="next">Decorators</li>
+    </ul>
+</section>
+
+<section class="slide cover w c">
+    <h2>CustomElements</h2>
+    <img src="pictures/bem-2/custom-elements.jpg"/>
+</section>
+<section class="slide">
+    <h2>CustomElements</h2>
+        <pre class="l-7 html">
+            <code>&lt;x-calendar view="2013-06-09" controls&gt;&lt;/x-calendar&gt;</code>
+            <code>&lt;x-slider min="0" max="50"&gt;&lt;/x-slider&gt;</code>
+        </pre>
+</section>
+<section class="slide">
+    <h2>Поддержка CustomElements: ~45%</h2>
+
+    <div><img src="pictures/bem-2/custom-elements-support.jpg"/></div>
+</section>
+<section class="slide">
+    <h2>Web Components</h2>
+    <ul>
+        <li class="gray">Custom Elements</li>
+        <li>Templates</li>
+        <li>Imports</li>
+        <li>Shadow DOM</li>
+        <li>Decorators</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Templates</h2>
+        <pre class="l-7 html">
+            <code>&lt;template&gt;</code>
+            <code>    &lt;img src="logo.png"/&gt;</code>
+            <code>    &lt;div class="comment"&gt;&lt;/div&gt;</code>
+            <code>&lt;/template&gt;</code>
+        </pre>
+</section>
+<section class="slide">
+    <h2>Поддержка &lt;template&gt;: ~46%</h2>
+
+    <div><img src="pictures/bem-2/templates-support.jpg"/></div>
+</section>
+<section class="slide">
+    <h2>WebComponents</h2>
+    <ul>
+        <li class="gray">Custom Elements</li>
+        <li class="gray">Templates</li>
+        <li>Imports</li>
+        <li>Shadow DOM</li>
+        <li>Decorators</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Imports</h2>
+    <ul>
+        <li>&lt;link rel="stylesheet"&gt; для загрузки CSS</li>
+        <li class="next">&lt;script src&gt; для загрузки скриптов</li>
+        <li class="next">&lt;img&gt; для загрузки картинок</li>
+        <li class="next">&lt;audio&gt; для загрузки аудио</li>
+        <li class="next">&lt;video&gt; для загрузки видео</li>
+        <li class="next gray">??? для загрузки HTML</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Imports</h2>
+        <pre class="l-7 html">
+            <code>&lt;head&gt;</code>
+            <code>    &lt;link rel="import" href="/imports/stuff.html"&gt;&lt;/link&gt;</code>
+            <code>&lt;/head&gt;</code>
+        </pre>
+</section>
+<section class="slide">
+    <h2>Поддержка HTMLImports: ?</h2>
+
+    <div><img src="pictures/bem-2/html-imports-support.jpg"/></div>
+</section>
+<section class="slide">
+    <h2>Web Components</h2>
+    <ul>
+        <li class="gray">Templates</li>
+        <li class="gray">Custom Elements</li>
+        <li class="gray">Imports</li>
+        <li>Shadow DOM</li>
+        <li>Decorators</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Shadow DOM</h2>
+
+    <div>Shadow DOM реализует инкапсуляцию DOM-дерева. В него прячется оформительская вёрстка, необходимая для создания визуально-красивого контрола/виджета и т.д</div>
+    <div>
+        <a href="http://w3c.github.io/webcomponents/spec/shadow/index.html">http://w3c.github.io/webcomponents/spec/shadow/index.html</a>
+    </div>
+</section>
+<section class="slide">
+    <h2>Поддержка ShadowDom: ~33%</h2>
+
+    <div><img src="pictures/bem-2/shadow-dom-support.jpg"/></div>
+</section>
+<section class="slide">
+    <h2>WebComponents</h2>
+    <ul>
+        <li class="gray">Templates</li>
+        <li class="gray">Custom Elements</li>
+        <li class="gray">Imports</li>
+        <li class="gray">Shadow DOM</li>
+        <li>Decorators</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Decorators</h2>
+
+    <div>A decorator is something that enhances or overrides the presentation of an existing element.</div>
+    <div>
+        <a href="http://www.w3.org/TR/components-intro/#decorator-section">http://www.w3.org/TR/components-intro/#decorator-section</a>
+    </div>
+</section>
+<section class="slide shout">
+    <h2>X-tag</h2>
+</section>
+<section class="slide shout">
+    <h2>Demo</h2>
+</section>
+<section class="slide shout">
+    <h2>Поддержка браузерами</h2>
+</section>
+<section class="slide shout">
+    <h2>The Extensible Web<br/>Manifesto</h2>
+</section>
+<section class="slide">
+    <h2>The Extensible Web<br/>Manifesto</h2>
+    <blockquote>
+        Develop, describe and test new high-level features in JavaScript, and allow web developers to iterate on them before they become standardized. This creates a virtuous cycle between standards and developers.
+    </blockquote>
+</section>
+<section class="slide">
+    <h2>Ссылки</h2>
+    <ul style="font-size: 20px">
+        <li><a href="http://www.w3.org/TR/components-intro/">Спецификация W3C</a></li>
+        <li>
+            <a href="http://jonrimmer.github.io/are-we-componentized-yet/">http://jonrimmer.github.io/are-we-componentized-yet/</a>
+        </li>
+        <li>Статьи на HTML5Rocks:
+            <ul>
+                <li>
+                    <a href="http://www.html5rocks.com/en/tutorials/webcomponents/template/">http://www.html5rocks.com/en/tutorials/webcomponents/template/</a>
+                </li>
+                <li>
+                    <a href="http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/">http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/</a>
+                </li>
+                <li>
+                    <a href="http://www.html5rocks.com/en/tutorials/webcomponents/customelements/">http://www.html5rocks.com/en/tutorials/webcomponents/customelements/</a>
+                </li>
+                <li>
+                    <a href="http://www.html5rocks.com/en/tutorials/webcomponents/imports/">http://www.html5rocks.com/en/tutorials/webcomponents/imports/</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="http://x-tags.org/">X-tag</a></li>
+        <li><a href="http://www.polymer-project.org/">Polymer Project</a></li>
+    </ul>
+</section>
+<section class="slide first">
+    <div class="arrow">
+        <img src="images/yandex.svg" class="yandex"/>
+
+        <h2>Спасибо</h2>
+
+        <div class="info">
+            <p class="author">Вадим Пацев</p>
+        </div>
+    </div>
+</section>
+
+<div class="progress">
+    <div></div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/shower/shower.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
