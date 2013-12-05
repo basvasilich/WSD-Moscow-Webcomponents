@@ -1,16 +1,14 @@
 (function () {
 
-    // Create your component here
-    // http://x-tags.org/docs
-
     xtag.register('nb-button', {
         extends: 'button',
         lifecycle: {
             created: function () {
-                var tmpl = document.getElementById('tpl-button_icon')
-                var content = this.innerHTML;
+                var tmpl = document.querySelector('template#button');
+                var content = this.textContent;
                 this.innerHTML = tmpl.innerHTML.replace('{{content}}', content);
-            }},
+            }
+        },
         events: {
             'click': function () {
                 xtag.fireEvent(this, 'nb-button_clicked');
@@ -27,14 +25,8 @@
 
             },
             disabled: {
-                set: function (value) {
-                    if (value) {
-                        this.classList.add('is-disabled');
-                        this.setAttribute('disabled', value);
-                    } else {
-                        this.classList.remove('is-disabled');
-                        this.removeAttribute('disabled');
-                    }
+                attribute: {
+                    boolean: true
                 }
             }
         }
@@ -44,14 +36,15 @@
         extends: 'input',
         lifecycle: {
             created: function () {
-                var tmpl = document.getElementById('tpl-input')
+                var tmpl = document.querySelector('template#input');
                 var placeholder = this.getAttribute('placeholder');
-                var content = this.innerHTML;
+                var content = this.textContent;
                 this.innerHTML = tmpl.innerHTML.replace('{{content}}', content).replace('{{placeholder}}', placeholder);
-            }},
+            }
+        },
         events: {
             'click:delegate(.field-reset)': function () {
-                this.parentNode.parentNode.reset()
+                this.parentNode.parentNode.reset();
             }
         },
         accessors: {
@@ -61,21 +54,17 @@
                 }
             },
             disabled: {
-                set: function (value) {
-                    if (value) {
-                        this.classList.add('is-disabled');
-                        this.querySelector('input[type=text]').setAttribute('disabled', value);
-                    } else {
-                        this.classList.remove('is-disabled');
-                        this.querySelector('input[type=text]').removeAttribute('disabled');
-                    }
-                }
+                   attribute: {
+                       selector: 'input[type=text]',
+                       boolean: true
+                   }
+
             },
             value: {
-                set: function(value){
+                set: function (value) {
                     this.querySelector('input[type=text]').value = value;
                 },
-                get: function(){
+                get: function () {
                     return this.querySelector('input[type=text]').value;
                 }
             }
@@ -93,13 +82,11 @@
         extends: 'input',
         lifecycle: {
             created: function () {
-                this.button = this.querySelector('button[is=nb-button]');
-                this.input = this.querySelector('nb-input');
-            }},
+                this.button = this.querySelector('[is=nb-button]');
+                this.input = this.querySelector('[is=nb-input]');
+            }
+        },
         events: {
-            'nb-input_reseted': function () {
-                console.log('nb-reseted fired')
-            },
             'nb-button_clicked': function () {
                 this.send();
             }
@@ -121,6 +108,9 @@
                         this.button.disabled = false;
                         this.input.disabled = false;
                     }
+                },
+                get: function () {
+                    return !!this.querySelector('input[type=text][disabled]');
                 }
             },
             value: {
@@ -128,13 +118,13 @@
                     this.input.value = value;
                 },
                 get: function () {
-                    return this.input.value
+                    return this.input.value;
                 }
             }
         },
         methods: {
             send: function () {
-                console.log('Input-group result ', this.value)
+                console.log('Input-group result ', this.value);
             }
         }
     });

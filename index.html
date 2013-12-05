@@ -34,6 +34,16 @@
         </div>
     </div>
 </section>
+<section class="slide about">
+    <h2>Обо мне</h2>
+    <ul>
+        <li class="big"><a href="http://twitter.com/basvasilich">@basvasilich</a></li>
+        <li class="big">Слайды — <a href="http://bit.ly/wsd42">bit.ly/wsd42</a></li>
+        <li><a href="mailto:basvasilich@yandex-yeam.ru">basvasilich@yandex-team.ru</a></li>
+        <li>Участник сообщества «<a href="http://web-standards.ru/">Веб-стандарты</a>»</li>
+        <li>Руководитель отдела разработки<br/>интерфейсов персонального<br/>направления Яндекса</li>
+    </ul>
+</section>
 <section class="slide cover w c">
     <img src="pictures/bem-2/web-components.png"/>
 </section>
@@ -41,10 +51,10 @@
     <h2>Web Components</h2>
     <ul>
         <li>Custom Elements</li>
-        <li class="next">Templates</li>
-        <li class="next">Imports</li>
-        <li class="next">Shadow DOM</li>
-        <li class="next">Decorators</li>
+        <li>Templates</li>
+        <li>Imports</li>
+        <li>Shadow DOM</li>
+        <li>Decorators</li>
     </ul>
 </section>
 
@@ -60,9 +70,11 @@
         </pre>
 </section>
 <section class="slide">
-    <h2>Поддержка CustomElements: ~45%</h2>
-
-    <div><img src="pictures/bem-2/custom-elements-support.jpg"/></div>
+    <h2>Поддержка CustomElements</h2>
+    <ul>
+        <li>Firefox ~23</li>
+        <li>Chrome ~27 (31+)</li>
+    </ul>
 </section>
 <section class="slide">
     <h2>Web Components</h2>
@@ -84,9 +96,12 @@
         </pre>
 </section>
 <section class="slide">
-    <h2>Поддержка &lt;template&gt;: ~46%</h2>
-
-    <div><img src="pictures/bem-2/templates-support.jpg"/></div>
+    <h2>Поддержка &lt;template&gt;:</h2>
+    <ul>
+        <li>Firefox 24+</li>
+        <li>Chrome 29+</li>
+        <li>Opera 17+</li>
+    </ul>
 </section>
 <section class="slide">
     <h2>WebComponents</h2>
@@ -103,10 +118,10 @@
     <h2>Imports</h2>
     <ul>
         <li>&lt;link rel="stylesheet"&gt; для загрузки CSS</li>
-        <li class="next">&lt;script src&gt; для загрузки скриптов</li>
-        <li class="next">&lt;img&gt; для загрузки картинок</li>
-        <li class="next">&lt;audio&gt; для загрузки аудио</li>
-        <li class="next">&lt;video&gt; для загрузки видео</li>
+        <li>&lt;script src&gt; для загрузки скриптов</li>
+        <li>&lt;img&gt; для загрузки картинок</li>
+        <li>&lt;audio&gt; для загрузки аудио</li>
+        <li>&lt;video&gt; для загрузки видео</li>
         <li class="next gray">??? для загрузки HTML</li>
     </ul>
 </section>
@@ -119,9 +134,10 @@
         </pre>
 </section>
 <section class="slide">
-    <h2>Поддержка HTMLImports: ?</h2>
-
-    <div><img src="pictures/bem-2/html-imports-support.jpg"/></div>
+    <h2>Поддержка HTMLImports</h2>
+<ul>
+    <li>Chrome 31+</li>
+</ul>
 </section>
 <section class="slide">
     <h2>Web Components</h2>
@@ -142,9 +158,11 @@
     </div>
 </section>
 <section class="slide">
-    <h2>Поддержка ShadowDom: ~33%</h2>
-
-    <div><img src="pictures/bem-2/shadow-dom-support.jpg"/></div>
+    <h2>Поддержка ShadowDom</h2>
+    <ul>
+        <li>Chrome 29+</li>
+        <li>Opera 17+</li>
+    </ul>
 </section>
 <section class="slide">
     <h2>WebComponents</h2>
@@ -159,7 +177,7 @@
 <section class="slide">
     <h2>Decorators</h2>
 
-    <div>A decorator is something that enhances or overrides the presentation of an existing element.</div>
+    <div>Декоратор — это что-то что переопределяет или дополняет отображение элемента.</div>
     <div>
         <a href="http://www.w3.org/TR/components-intro/#decorator-section">http://www.w3.org/TR/components-intro/#decorator-section</a>
     </div>
@@ -168,10 +186,21 @@
     <h2>X-tag</h2>
 </section>
 <section class="slide shout">
-    <h2>Demo</h2>
+    <h2><a href="demo/index.html">Demo</a></h2>
 </section>
 <section class="slide shout">
     <h2>Поддержка браузерами</h2>
+</section>
+<section class="slide">
+    <h2>X-tag: поддержка браузерами</h2>
+    <ul>
+        <li>Firefox 5+ desktop & mobile  </li>
+        <li>Chrome 4+</li>
+        <li>Android 2.1+ </li>
+        <li>Safari 4+ desktop & mobile</li>
+        <li>Internet Explorer 9+</li>
+        <li>Opera 11+ desktop & mobile</li>
+    </ul>
 </section>
 <section class="slide shout">
     <h2>The Extensible Web<br/>Manifesto</h2>
@@ -179,8 +208,9 @@
 <section class="slide">
     <h2>The Extensible Web<br/>Manifesto</h2>
     <blockquote>
-        Develop, describe and test new high-level features in JavaScript, and allow web developers to iterate on them before they become standardized. This creates a virtuous cycle between standards and developers.
+        Разрабатывать, описывать и тестировать новые высокоуровневые функции в JavaScript. Давать возможность веб-разработчикам тестировать их до внесения в стандарт. Это создает эффективное взаимодействие между разработчиками стандартов и разработчиками продуктов.
     </blockquote>
+    <p><a href="http://extensiblewebmanifesto.org/">Ссылка</a></p>
 </section>
 <section class="slide">
     <h2>Ссылки</h2>
@@ -206,17 +236,18 @@
             </ul>
         </li>
         <li><a href="http://x-tags.org/">X-tag</a></li>
+        <li><a href="http://mozilla.github.io/brick/">Brick</a></li>
         <li><a href="http://www.polymer-project.org/">Polymer Project</a></li>
     </ul>
 </section>
-<section class="slide first">
+<section class="slide last">
     <div class="arrow">
         <img src="images/yandex.svg" class="yandex"/>
-
         <h2>Спасибо</h2>
 
         <div class="info">
-            <p class="author">Вадим Пацев</p>
+            <p class="author">Вадим Пацев <a href="http://twitter.com/basvasilich">@basvasilich</a></p>
+            <p class="author"><a href="http://bit.ly/wsd42">bit.ly/wsd42</a> </p>
         </div>
     </div>
 </section>

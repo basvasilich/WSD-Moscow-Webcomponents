@@ -14,14 +14,13 @@
 <h2>NB Demo</h2>
 
 
-<nb-input-group id="register">
-    <nb-input placeholder="Введите свой email"></nb-input>
-    <button is="nb-button">Подписаться</nb-button>
+<nb-input-group id="input-group">
+    <nb-input placeholder="Email" id="input"></nb-input>
+    <button is="nb-button" id="button">Sing up</nb-button>
 </nb-input-group>
 
-
 <!------------------------->
-<template id="tpl-input">
+<template id="input">
     <label class="field">
         <span class="field-reset"></span>
         <span class="field-content">
@@ -30,9 +29,11 @@
         </span>
     </label>
 </template>
-<template id="tpl-button_icon">
+
+<template id="button">
     <span class="button-content">{{content}}</span>
 </template>
 <!------------------------->
+
 </body>
 </html>

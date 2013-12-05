@@ -30,6 +30,7 @@ body {
 		}
 
 .slide.first,
+.slide.last,
 .debug .slide.first
 {
     background: #fff url(../images/ribbon.svg) 0 0 no-repeat;
@@ -50,6 +51,7 @@ body {
     width: 60%;
 }
 
+.slide.last h2,
 .slide.first h2 {
     font-size: 90px;
 
@@ -71,6 +73,7 @@ body {
     transform:translateY(-50%);
 }
 
+.slide.last .info,
 .slide.first .info
 {
     position: absolute;
@@ -80,9 +83,22 @@ body {
     font-size: 75%;
 }
 
+.slide.last .info {
+    font-size: 150%;
+    bottom: 120px;
+}
+
+.slide.last .info p,
 .slide.first .info p
 {
     margin: 0;
+}
+
+.slide.last .info p {
+    white-space: nowrap;
+}
+.slide.last .info a {
+    text-decoration: none;
 }
 
 /* Debug */
@@ -580,6 +596,7 @@ body {
 /* Cover */
 .full .slide.cover,
 .full .slide.first,
+.full .slide.last,
 .full .slide.null,
 .full .slide.shout
 {
@@ -587,6 +604,7 @@ body {
 }
 .full .slide.cover:after,
 .full .slide.first:after,
+.full .slide.last:after,
 .full .slide.null:after,
 .full .slide.shout:after
 {
@@ -623,7 +641,8 @@ body {
 
 
 
-.first
+.first,
+.last
 {
     padding: 0;
 	width: 1024px;
@@ -717,4 +736,15 @@ dd
 dl.code dt
 {
     font-family: Monaco, Courier;
+}
+
+.about {
+    background: url('../pictures/365x365.jpeg') no-repeat right bottom;
+    background-color: #fff;
+    background-size: contain;
+}
+
+.about .big a{
+    border-bottom: none;
+    font-size: 150%;
 }
