@@ -1,0 +1,9 @@
+nb-input-group
+{
+    vertical-align: top;
+}
+
+.is-disabled input
+{
+    color: #eaeaea;
+}
