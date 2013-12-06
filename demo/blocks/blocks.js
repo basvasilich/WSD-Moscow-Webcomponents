@@ -1,25 +1,125 @@
 (function () {
 
-    xtag.register('x-stub', {
-        extends: '',
+    xtag.register('nb-button', {
+        extends: 'button',
         lifecycle: {
             created: function () {
-            },
-            inserted: function () {
-            },
-            removed: function () {
-            },
-            attributeChanged: function () {
+                var tmp = document.querySelector('template#button');
+                var content = this.textContent;
+
+                this.innerHTML = tmp.innerHTML.replace('{{content}}', content);
             }
         },
         events: {
-
+            'click': function () {
+                xtag.fireEvent(this, 'nb-button_click');
+            }
         },
         accessors: {
+            content: {
+                set: function (content) {
+                    this.querySelector('.button-content').innerHTML = content;
+                },
+                get: function () {
+                    return this.querySelector('.button-content').innerHTML;
+                }
+            },
+            disabled: {
+                attribute: {
+                    boolean: true
+                }
+            }
+        }
+    });
 
+    xtag.register('nb-input', {
+        extends: 'input',
+        lifecycle: {
+            created: function () {
+                var tmp = document.querySelector('template#input');
+                var content = this.textContent;
+                var placeholder = this.getAttribute('placeholder');
+
+                this.innerHTML = tmp.innerHTML.replace('{{content}}', content).replace('{{placeholder}}', placeholder);
+            }
+        },
+        events: {
+            'click:delegate(.field-reset)': function () {
+                this.parentNode.parentNode.reset();
+            }
+        },
+        accessors: {
+            value: {
+                set: function (value) {
+                    this.querySelector('input[type=text]').value = value;
+                },
+                get: function () {
+                    return this.querySelector('input[type=text]').value;
+                }
+            },
+            disabled: {
+                attribute: {
+                    selector: 'input[type=text]',
+                    boolean: true
+                }
+            },
+            placeholder: {
+                attribute: {
+                    selector: 'input[type=text]'
+                }
+            }
         },
         methods: {
+            reset: function () {
+                this.value = '';
+                xtag.fireEvent(this, 'nb-input_reseted');
+            }
+        }
+    });
 
+    xtag.register('nb-input-group', {
+        extends: 'div',
+        lifecycle: {
+            created: function () {
+                this.button = this.querySelector('[is=nb-button]');
+                this.input = this.querySelector('[is=nb-input]');
+            }
+        },
+        events: {
+            'nb-button_click': function () {
+                this.send();
+            }
+        },
+        accessors: {
+            value: {
+                set: function (value) {
+                    this.input.value = value;
+                },
+                get: function () {
+                    return this.input.value;
+                }
+            },
+            disabled: {
+                set: function (value) {
+                    if (value) {
+                        this.classList.add('is-disabled');
+                        this.button.disabled = true;
+                        this.input.disabled = true;
+                    } else {
+                        this.classList.remove('is-disabled');
+                        this.button.disabled = false;
+                        this.input.disabled = false;
+                    }
+                },
+                get: function() {
+                    return !!this.input.getAttribute('disabled');
+                }
+            }
+        },
+        methods: {
+            send: function () {
+                console.log('Input group send ', this.value)
+            }
         }
     });
 
